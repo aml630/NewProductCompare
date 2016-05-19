@@ -69,7 +69,7 @@ namespace TravelBlog
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Categories}/{action=Index}/{id?}");
+                    template: "{controller=SubCategories}/{action=Index}/{id?}");
             });
 
             app.UseIISPlatformHandler();

@@ -4,8 +4,25 @@
 }
 @model IList<ProductCompareDotNet.Models.SubCategory>
 
+<div class="row">
+    <div class="col-sm-8">
+        Popular Categories
+        <hr />
+        @foreach (var subCategory in Model)
+        {
+           
+            @Html.ActionLink(subCategory.SubCategoryName, "SubList", "SubCategories", new { id = subCategory.SubCategoryId })
+            <hr />
+        }
+    </div>
 
-@foreach(var subCategory in Model)
-{
-    <li>@subCategory.SubCategoryName</li>
-}
+    Newly Added Products
+    <hr />
+    <div class="col-sm-4">
+        @foreach (var product in ViewBag.Products)
+        {
+            <li>@product.ProductName</li>
+        }
+    </div>
+
+</div>

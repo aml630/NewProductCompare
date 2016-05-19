@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Product Compare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<ProductCompareDotNet.Models.Product>
+
+<form action="~/SubCategories/AddProductToSublist/" method="post">
+    <h4>Add Product To Sub Category</h4>
+    <input name="Name" placeholder="Product Link"/>
+    <input hidden name="subId" value=@ViewBag.SubId />
+    <button>Submit</button>
+</form>
+
+
+<div class="row">
+
+    <div class="col-sm-2">
+        @foreach (var product in Model)
+        {
+            <div class="tableCell">
+                <h5>Item</h5>
+
+                        <a href="~/Products/ProductList/@product.ProductId">@product.ProductName</a>
+
+
+            </div>
+
+        }
+    </div>
+    <div class="col-sm-2">
+        @foreach (var product in Model)
+        {
+            <div class="tableCell">
+                <h5>Price</h5>
+
+                <div class="percentage">
+                   
+                        <a class="product-sale-price" href="~/Products/ProductList/@product.ProductId">@product.ProductPrice</a>
+
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="col-sm-2">
+        @foreach (var product in Model)
+            {
+            <div class="tableCell">
+                <h5>Picture</h5>
+
+                <div class="percentage">
+                    <div class="roundedNum">
+                        <img src="@product.ProductImg" height="50" width="50" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+
+
+
+
+
+</div>
+
