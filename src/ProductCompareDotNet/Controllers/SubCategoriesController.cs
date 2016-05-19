@@ -33,6 +33,26 @@ namespace ProductCompareDotNet.Controllers
             var SubProducts = db.Products.Where(product => product.SubCategoryId == id);
             return View(SubProducts);
         }
+
+        public IActionResult AddSub(string subCatName, string subCatImg)
+        {
+            SubCategory subCat = new SubCategory();
+            subCat.SubCategoryName = subCatName;
+            subCat.SubCategoryImage = subCatImg;
+
+            db.SubCategories.Add(subCat);
+
+            db.SaveChanges();
+
+            ViewBag.Products = db.Products.ToList();
+            var SubList = db.SubCategories.ToList();
+
+            return RedirectToAction("Index", "SubCategories", SubList);
+        }
+
+    
+
+
         [HttpPost]
 
         public IActionResult AddProductToSublist (string Name,int subId )

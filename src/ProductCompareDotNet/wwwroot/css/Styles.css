@@ -103,7 +103,29 @@ li.logOutLI {
     border-bottom: .4px solid grey;
 }
 
+.bold {
+    font-size: 50px;
+}
+.subCatBox {
+    display: inline-flex;
+     padding-top:10px;
+    text-align: center;
+  width: 200px;
+    height: 200px;
 
+  margin-right:5px;
+  padding-bottom: 10px;
+  border: 1px solid #d1d1d1;
+  box-shadow: rgba(0,0,0, 0.0980392) 0px 3px 12px 1px;
+  margin-bottom:20px;
+  font-family: "Open Sans Semibold", "Open Sans", Arial, sans-serif;
+  font-size:11.5px;
+  background: #fff;
+}
+
+.subMain {
+    border-right: 1px solid #d1d1d1;
+}
 .productInfo {
      padding-top:10px;
     text-align: center;

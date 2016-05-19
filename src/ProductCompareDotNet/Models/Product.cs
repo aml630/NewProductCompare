@@ -20,17 +20,14 @@ namespace ProductCompareDotNet.Models
         public int ProductPrice { get; set; }
         public string ProductDescription { get; set; }
 
-        public int SetUpTrue { get; set; }
-        public int SetUpFalse { get; set; }
 
-        public int EasyUseTrue { get; set; }
-        public int EasyUseFalse { get; set; }
 
-        public int GoodValueTrue { get; set; }
-        public int GoodValueFalse { get; set; }
-
-        public int WouldSuggestTrue { get; set; }
-        public int WouldSuggestFalse { get; set; }
+        public string title { get; set; }
+        public string intro { get; set; }
+        public string par1 { get; set; }
+        public string par2 { get; set; }
+        public string par3 { get; set; }
+        public string conclusion { get; set; }
 
         public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }

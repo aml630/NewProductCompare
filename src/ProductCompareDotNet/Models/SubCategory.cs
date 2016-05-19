@@ -13,6 +13,7 @@ namespace ProductCompareDotNet.Models
         [Key]
         public int SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }
+        public string SubCategoryImage { get; set; }
         public virtual ICollection<Product> Products { get; set; }
 
         public SubCategory(string catName, int id = 0)

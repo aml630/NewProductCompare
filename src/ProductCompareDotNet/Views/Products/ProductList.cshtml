@@ -16,7 +16,32 @@
         <a class="btn btn-danger btn-circle" href="@product.ProductLink">SHUT UP AND TAKE MY MONEY</a>
 
     </div>
-   
+
+<h2>Article:</h2> 
+    <form action="~/Products/AddPost" method="post">
+        <input name="title" />
+        <input name="intro" />
+        <input name="par1" />
+        <input name="par2" />
+        <input name="par3" />
+        <input name="conclusion" />
+        <input hidden name="id" value="@product.ProductId" />
+        <button>submit</button>
+    </form>
+    @if (product.title != null)
+    {
+        <li class="bold">@product.title</li>
+        <li>@product.intro</li>
+        <li>@product.par1</li>
+        <li>@product.par2</li>
+        <li>@product.par3</li>
+        <li>@product.conclusion</li>
+
+    }
+
+
+
+
 }
 @*<button class="ShowAll btn btn-warning">All Info</button>
 <button class="DescriptionButton btn btn-warning">Product Description</button>
