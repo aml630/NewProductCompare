@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "ProductShare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ProductCompareDotNet.Models.Category
+<html>
+<head>
+    <title>Person - Create</title>
+</head>
+<body>
+    <h2>Create Person</h2>
+    <hr />
+    <h4>Add a new person</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBoxFor(model => model.CategoryName, new { placeholder = "Add New Category"})
+
+        <input class ="btn btn-danger"type="submit" value="Submit Category" />
+    }
+</body>
+</html>

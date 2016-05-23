@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Product Compare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IList<ProductCompareDotNet.Models.SubCategory>
+@Html.Partial("_ProductPost")
+    <div class="row">
+        <div class="col-sm-8 subMain">
+            Popular Categories
+            <form action="/SubCategories/AddSub" method="post">
+                <input name="subCatName" placeholder="name"/>
+                <input name="subCatImg" placeholder="image" />
+                <select>
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                    <option value="@category.CategoryName"></option>
+                    }
+
+                </select>
+                <button>Submit</button>
+            </form>
+            <hr />
+            @foreach (var subCategory in Model)
+            {
+                <div class="subCatBox">
+                    @Html.ActionLink(subCategory.SubCategoryName, "SubList", "SubCategories", new { id = subCategory.SubCategoryId })
+                    <img src="@subCategory.SubCategoryImage" height="100" width="100"/>
+
+                </div>
+            }
+        </div>
+
+        Newly Added Products
+        <hr />
+        <div class="col-sm-4">
+            @foreach (var product in ViewBag.Products)
+            {
+                <li>@product.ProductName</li>
+            }
+        </div>
+
+    </div>

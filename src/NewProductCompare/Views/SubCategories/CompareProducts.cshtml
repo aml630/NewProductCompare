@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Product Compare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<ProductCompareDotNet.Models.SubCategory>
+
+
+@foreach (var subCat in Model)
+{
+    <h1>@subCat.SubCategoryName</h1>
+
+    <div class="row">
+        <div class="col-sm-2 tile">
+            @foreach (var product in subCat.Products)
+            {
+                <div class="tableCell noOverflow">
+                    <h5>Product Name</h5>
+                    @product.ProductName
+                    <img src="@product.ProductImg" height="30" width="30" />
+                </div>
+            }
+        </div>
+        <div class="col-sm-2">
+            @foreach (var product in subCat.Products)
+            {
+
+                <div class="tableCell">
+                    <h5>Product Price</h5>
+
+                    <div class="product-sale-price">$@product.ProductPrice</div>
+                </div>
+            }
+        </div>
+        <div class="col-sm-2">
+            @foreach (var product in subCat.Products)
+            {
+                <div class="tableCell">
+                    <h5>Usability</h5>
+
+                    <div class="percentage">
+                        <div class="roundedNum">
+                            <p>@product.getPercent(product.EasyUseTrue, product.EasyUseFalse)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-sm-2">
+            @foreach (var product in subCat.Products)
+            {
+                <div class="tableCell">
+                    <h5>Good Value</h5>
+                    <div class="percentage">
+                        <div class="roundedNum">
+                            <p>@product.getPercent(product.GoodValueTrue, product.GoodValueFalse)</p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+        <div class="col-sm-2">
+
+            @foreach (var product in subCat.Products)
+            {
+                <div class="tableCell">
+                    <h5>Ease Of Setup</h5>
+
+                    <div class="percentage">
+                        <div class="roundedNum">
+                            <p>@product.getPercent(product.SetUpTrue, product.SetUpFalse)</p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+        <div class="col-sm-2">
+
+            @foreach (var product in subCat.Products)
+            {
+                <div class="tableCell">
+                    <h5>Would Suggest</h5>
+
+                    <div class="percentage">
+                        <div class="roundedNum">
+                            <p>@product.getPercent(product.WouldSuggestTrue, product.WouldSuggestFalse)</p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

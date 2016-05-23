@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Product Compare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IList<ProductCompareDotNet.Models.Product>
+
+
+
+<div class="container-fluid" id="container-fluid-index-top">
+    <div class="row" id="section-1">
+        <div class="row" id="section-1-top">
+            <div class="col-md-6">
+                </div>
+
+            <div class="col-md-6" id="col-2">
+                <div class="section-1-top-text-wrap">
+                    <div class="section-1-top-text">
+                        Save, discover, and find the best products on the web.
+                    </div>
+                </div>
+                <div class="go text-center">
+                    <form action="/Categories/CreateProduct" method="post">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="ui-widget input-group input-group-lg">
+                                <input id="basics" name="Name" type="text" class="form-control" placeholder="Thinking About Buying Something?">
+
+
+                                <input type="submit" value="GOGO" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <br><br>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="col-md-10">
+
+
+
+    @foreach (var product in Model)
+    {
+
+        <div class="container-fluid main content">
+
+            <div class="product-box">
+                <div class="img-wrap">
+                    <img src="@product.ProductImg">
+                </div>
+
+                <div class="product-name">
+                    @Html.ActionLink(product.ProductName, "ProductList", "Products", new { id = product.ProductId })
+                </div>
+                <div class="product-sale-price">
+                    $@product.ProductPrice
+                    <div class="product-comments" id="shopping-cart-box">
+                        <a href="/Products/ProductList/@product.ProductId"><i class="fa fa-commenting">@product.Reviews.Count()</i></a>
+                    </div>
+                  
+
+
+                </div>
+                <div class="product-likes-and-comments">
+                    <div class="avgStars">
+                        <i class="fa fa-star" style="font-size:20px"></i>
+                        <i class="fa fa-star" style="font-size:20px"></i>
+                        <i class="fa fa-star" style="font-size:20px"></i>
+                        <i class="fa fa-star" style="font-size:20px"></i>
+                        <i class="fa fa-star" style="font-size:20px"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<div class="col-md-2 sidebar">
+    <i class="fa fa-money sidebarIcons" aria-hidden="true"></i>
+    <h4><a href="~/Categories/PriceSort" class="sidebarCategories">Sort By Price</a></h4>
+    <i class="fa fa-caret-square-o-up sidebarIcons" aria-hidden="true"></i>
+    <h4><a class="sidebarCategories" href="~/Categories/DateSort">Newest First</a></h4>
+    <i class="fa fa-thumbs-up sidebarIcons" aria-hidden="true"></i>
+    <h4><a class="sidebarCategories" href="~/Categories/ReviewSort">Most Reviews</a></h4>
+    <hr />
+    @foreach(var category in ViewBag.Categories)
+    {
+        string Name = category.CategoryName;
+        <h4>@Html.ActionLink(Name, "CategorySort", "Categories", new { catId = category.CategoryId })</h4>
+    }
+</div>
+
+
+
+
+
+
+
