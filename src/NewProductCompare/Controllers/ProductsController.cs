@@ -29,7 +29,7 @@ namespace ProductCompareDotNet.Controllers
 
         public IActionResult Index()
         {
-            return View(db.Products.Include(product => product.Reviews).ToList());
+            return View(db.Products.ToList());
         }
 
       
@@ -39,7 +39,7 @@ namespace ProductCompareDotNet.Controllers
             Product findProd = db.Products.FirstOrDefault(x => x.ProductId == id);
            
 
-            var prodList = db.Products.Where(x => x.ProductId == id).Include(product => product.Reviews).ThenInclude(review => review.User).Include(product => product.Questions).ThenInclude(question => question.User).Include(product => product.Questions).ThenInclude(question => question.Answers).ToList();
+            var prodList = db.Products.Where(x => x.ProductId == id).ToList();
 
             ViewBag.ProdId = id;
 

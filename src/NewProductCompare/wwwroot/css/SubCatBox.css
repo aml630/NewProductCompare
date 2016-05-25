@@ -1,0 +1,72 @@
+﻿.subCatBox {
+    /*background: green;*/
+   
+  width: 200px;
+  height: 200px;
+  border: 1px solid #d1d1d1;
+  box-shadow: rgba(0,0,0, 0.0980392) 0px 3px 12px 1px;
+  align-self:  flex-start;
+  padding: 11px;
+    margin-top: 10px;
+      text-align: center;
+background-color: #F8F8F8 ;
+}
+
+.subCatPic {
+    height: 111px;
+    width: 111px;
+    border-radius: 80%;
+    box-shadow: rgba(0,0,0, 0.0980392) 0px 3px 12px 1px;
+    border: 1px solid #d1d1d1;
+  border: 1px solid #d1d1d1;
+
+
+}
+
+.subCatParent {
+     display: flex;
+     flex-wrap: wrap;
+    justify-content: space-around;
+    /*align-content: space-between;*/
+    margin-left: 5%;
+        margin-right: 5%;
+}
+
+.product-box {
+    width: 200px;
+  height: 300px;
+  border: 1px solid #d1d1d1;
+  box-shadow: rgba(0,0,0, 0.0980392) 0px 3px 12px 1px;
+  padding: 11px;
+    margin-top: 10px;
+      text-align: center;
+background-color: #F8F8F8 ;
+
+}
+
+.namePriceRow {
+    display: flex;
+   flex-wrap:nowrap;
+
+}
+
+.product-name {
+  border-bottom: 1px solid #d1d1d1;
+  height:68px;
+  padding-left:15px;
+  padding-right:15px;
+  overflow:hidden;
+  font-size: 15px;
+  text-align: center;
+}
+
+.product-sale-price {
+  padding-left:15px;
+  padding-right:15px;
+  margin-top:10px;
+  font-weight:700;
+  color:#60a430;
+  height:30px;
+  margin-bottom:10px;
+  font-size: 30px;
+}

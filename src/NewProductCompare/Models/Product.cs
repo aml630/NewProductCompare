@@ -20,8 +20,6 @@ namespace ProductCompareDotNet.Models
         public int ProductPrice { get; set; }
         public string ProductDescription { get; set; }
 
-
-
         public string title { get; set; }
         public string intro { get; set; }
         public string par1 { get; set; }
@@ -36,25 +34,12 @@ namespace ProductCompareDotNet.Models
         public virtual Category Category { get; set; }
         public virtual SubCategory SubCategory { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
-        public virtual ICollection<Question> Questions { get; set; }
+   
 
         //public virtual ICollection<ApplicationUser> Users { get; set; }
 
 
 
-        public string getPercent(int num1, int num2)
-        {
-
-            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
-            nfi.PercentDecimalDigits = 0;
-
-            decimal firstNum = (decimal)(num1 / (decimal)(num2 + num1 + .0001));
-            string endNum = firstNum.ToString("P", nfi);
-
-            return endNum;
-        }
-    
 
 
     }

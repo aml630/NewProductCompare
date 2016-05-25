@@ -22,7 +22,7 @@ namespace ProductCompareDotNet.Controllers
         {
             ViewBag.Categories = db.Categories.ToList();
 
-            return View(db.Products.Include(product => product.Reviews).ToList());
+            return View(db.Products.ToList());
         }
 
 

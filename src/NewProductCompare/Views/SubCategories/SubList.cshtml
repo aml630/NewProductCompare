@@ -12,63 +12,30 @@
 </form>
 
 
-<div class="row">
+<div class="subCatParent">
 
-    <div class="col-sm-2">
-        @foreach (var product in Model)
-        {
-            <div class="tableCell">
-                <h5>Item</h5>
-
-                        <a href="~/Products/ProductList/@product.ProductId">@product.ProductName</a>
+    @foreach (var product in Model)
+    {
 
 
-            </div>
-
-        }
-    </div>
-    <div class="col-sm-2">
-        @foreach (var product in Model)
-        {
-            <div class="tableCell">
-                <h5>Price</h5>
-
-                <div class="percentage">
-                   
-                        <a class="product-sale-price" href="~/Products/ProductList/@product.ProductId">@product.ProductPrice</a>
-
+        <div class="product-box">
+                <img  class="subCatPic" src="@product.ProductImg">
+    
+            <div class="namePriceRow">
+                <div class="product-name">
+                    @Html.ActionLink(product.ProductName, "ProductList", "Products", new { id = product.ProductId })
                 </div>
-            </div>
-
-        }
-    </div>
-    <div class="col-sm-2">
-        @foreach (var product in Model)
-            {
-            <div class="tableCell">
-                <h5>Picture</h5>
-
-                <div class="percentage">
-                    <div class="roundedNum">
-                        <img src="@product.ProductImg" height="50" width="50" />
-                    </div>
+                <div class="product-sale-price">
+                    $@product.ProductPrice
                 </div>
+
             </div>
+                <div class="viewArticle">
+                <p>View Article</p>
+                </div>
+        </div>
 
-        }
-    </div>
-    <div class="col-sm-2">
-
-    </div>
-    <div class="col-sm-2">
-
-    </div>
-    <div class="col-sm-2">
-
-    </div>
-
-
-
+    }
 
 
 </div>
